@@ -4,7 +4,6 @@ from pydantic import BaseModel
 
 from modules.text_classification.predictor import predict
 
-
 app = FastAPI(
     title="MiniGrok Text Classification API",
     description="API for text classification into pre-defined categories using a fined-tuned DistilBERT model.",
