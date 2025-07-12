@@ -3,7 +3,7 @@ import pathlib
 
 import torch
 
-from model_loader import load_model
+from modules.text_classification.model_loader import load_model
 
 CONFIG_PATH = pathlib.Path(__file__).parent / "config.json"
 with open(CONFIG_PATH, "r") as f:
@@ -45,5 +45,5 @@ def predict(text: str) -> str:
         predicted_class = torch.argmax(logits, dim=-1).item()
 
     # Map the predicted class index to the label.
-    label = config["labels"][predicted_class]
+    label = config["labels"][str(predicted_class)]  # config requires a str label
     return label
