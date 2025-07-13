@@ -1,4 +1,5 @@
 import json
+import logging
 import pathlib
 
 import faiss
@@ -9,19 +10,24 @@ from modules.config import RAG_CHUNKS_FILE as CHUNKS_FILE
 from modules.config import RAG_EMBEDDING_MODEL_NAME as EMBEDDING_MODEL_NAME
 from modules.config import RAG_INDEX_FILE as INDEX_FILE
 
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s - %(levelname)s - %(message)s",
+)
+
 
 class DocumentRetriever:
-    def __init__(self, index_file: pathlib.Path, chunks_file: pathlib.Path, model_name: str):
+    def __init__(self, index_file: pathlib.Path, chunks_file: pathlib.Path, embedder_model_name: str):
         """
         Holds the FAISS index, list of chunks, and the embedding model for document retrieval.
 
         Args:
             index_file: Path to the FAISS index file.
             chunks_file: Path to the JSON file containing document chunks and source.
-            model_name: Name of the SentenceTransformer model to use for embeddings.
+            embedder_model_name: Name of the SentenceTransformer model to use for embeddings.
         """
         self.index = faiss.read_index(str(index_file))
-        self.model = SentenceTransformer(model_name)
+        self.model = SentenceTransformer(embedder_model_name)
         with open(chunks_file, "r", encoding="utf-8") as f:
             self.chunks = json.load(f)
 
@@ -73,9 +79,9 @@ class DocumentRetriever:
         return embedding.reshape(1, -1)  # Reshape to (1, dim) for FAISS search compatibility.
 
     def print_results(self, results: list[dict], query: str) -> None:
-        print(f"Query: '{query}'")
+        logging.info(f"Query: '{query}'")
         for result in results:
-            print(
+            logging.info(
                 f"Source: {result['source']}, Score: {result['score']: .4f}\n"
                 f"Text: {result['text']}\n"
                 + "==" * 35
