@@ -7,6 +7,7 @@ from sentence_transformers import SentenceTransformer
 
 from modules.config import RAG_CHUNKS_FILE as CHUNKS_FILE
 from modules.config import RAG_INDEX_DIR as INDEX_DIR
+from modules.config import RAG_EMBEDDING_MODEL_NAME as EMBEDDING_MODEL_NAME
 
 
 def build_faiss_index(chunks: list[dict], model_name: str, output_dir: pathlib.Path) -> None:
@@ -34,5 +35,4 @@ def build_faiss_index(chunks: list[dict], model_name: str, output_dir: pathlib.P
 if __name__ == "__main__":
     with open(CHUNKS_FILE, "r", encoding="utf-8") as f:
         chunks = json.load(f)
-    model_name = "sentence-transformers/all-MiniLM-L6-v2"
-    build_faiss_index(chunks, model_name, INDEX_DIR)
+    build_faiss_index(chunks, EMBEDDING_MODEL_NAME, INDEX_DIR)

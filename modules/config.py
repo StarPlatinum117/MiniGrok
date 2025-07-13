@@ -11,6 +11,8 @@ RAG_DOCUMENTS_DIR = RAG_DATA_DIR / "raw_documents"
 RAG_CHUNKS_FILE = RAG_CHUNKS_DIR / "document_chunks.json"
 RAG_INDEX_FILE = RAG_INDEX_DIR / "index.faiss"
 
+RAG_EMBEDDING_MODEL_NAME = "sentence-transformers/all-MiniLM-L6-v2"
+
 # Directories and files for text classification module.
 TEXT_CLASSIFICATION_DIR = MODULES_DIR / "text_classification"
 TEXT_CLASSIFICATION_MODEL_WEIGHTS_DIR = TEXT_CLASSIFICATION_DIR / "model_weights"
