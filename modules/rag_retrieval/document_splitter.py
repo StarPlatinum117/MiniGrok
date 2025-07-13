@@ -9,7 +9,7 @@ logging.basicConfig(
 
 CHUNK_SIZE = 500
 CHUNK_OVERLAP = 50
-DOCUMENTS_DIR = pathlib.Path(__file__).parent / "data"
+DOCUMENTS_DIR = pathlib.Path(__file__).parent / "data" / "chunks"
 
 
 def split_documents(

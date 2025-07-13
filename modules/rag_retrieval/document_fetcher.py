@@ -44,7 +44,7 @@ def fetch_and_save_documents(topics: list[str], output_dir: pathlib.Path) -> Non
 
 if __name__ == "__main__":
     # Define the output directory.
-    output_directory = pathlib.Path(__file__).parent / "data"
+    output_directory = pathlib.Path(__file__).parent / "data" / "raw_documents"
 
     # Fetch and save documents.
     fetch_and_save_documents(topics, output_directory)
