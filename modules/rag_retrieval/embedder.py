@@ -1,0 +1,39 @@
+import pathlib
+import json
+from sentence_transformers import SentenceTransformer
+import faiss
+import numpy as np
+
+RAG_DATA_DIR = pathlib.Path(__file__).parent / "data"
+CHUNKS_DIR = RAG_DATA_DIR / "chunks"
+INDEX_DIR = RAG_DATA_DIR / "index"
+CHUNKS_FILE = CHUNKS_DIR / "document_chunks.json"
+
+
+def build_faiss_index(chunks: list[dict], model_name: str, output_dir: pathlib.Path) -> None:
+    """
+    Builds a FAISS index from the provided text chunks using a specified SentenceTransformer model.
+
+    Args:
+        chunks: A list of dictionaries, each containing 'text' and 'source' keys.
+        model_name: The name of the SentenceTransformer model to use for embedding.
+        output_dir: The directory where the FAISS index will be saved.
+    """
+    model = SentenceTransformer(model_name)
+    embeddings = model.encode([chunk['text'] for chunk in chunks])
+    embeddings /= np.linalg.norm(embeddings, axis=1, keepdims=True)  # normalize to get cosine similarity
+    dim = embeddings.shape[1]
+    index = faiss.IndexFlatIP(dim)
+    index.add(embeddings)
+
+    output_dir.mkdir(parents=True, exist_ok=True)
+    filename = "index.faiss"
+    output_path = output_dir / filename
+    faiss.write_index(index, str(output_path))
+
+
+if __name__ == "__main__":
+    with open(CHUNKS_FILE, "r", encoding="utf-8") as f:
+        chunks = json.load(f)
+    model_name = "sentence-transformers/all-MiniLM-L6-v2"
+    build_faiss_index(chunks, model_name, INDEX_DIR)
