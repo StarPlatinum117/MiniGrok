@@ -2,6 +2,9 @@ import json
 import logging
 import pathlib
 
+from modules.config import RAG_DOCUMENTS_DIR as DOCUMENTS_DIR
+from modules.config import RAG_CHUNKS_DIR as CHUNKS_DIR
+
 logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s - %(levelname)s - %(message)s",
@@ -9,8 +12,6 @@ logging.basicConfig(
 
 CHUNK_SIZE = 500
 CHUNK_OVERLAP = 50
-DOCUMENTS_DIR = pathlib.Path(__file__).parent / "data" / "raw_documents"
-CHUNKS_DIR = DOCUMENTS_DIR.parent / "chunks"
 
 
 def split_documents(

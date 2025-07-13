@@ -1,13 +1,12 @@
-import pathlib
 import json
-from sentence_transformers import SentenceTransformer
+import pathlib
+
 import faiss
 import numpy as np
+from sentence_transformers import SentenceTransformer
 
-RAG_DATA_DIR = pathlib.Path(__file__).parent / "data"
-CHUNKS_DIR = RAG_DATA_DIR / "chunks"
-INDEX_DIR = RAG_DATA_DIR / "index"
-CHUNKS_FILE = CHUNKS_DIR / "document_chunks.json"
+from modules.config import RAG_CHUNKS_FILE as CHUNKS_FILE
+from modules.config import RAG_INDEX_DIR as INDEX_DIR
 
 
 def build_faiss_index(chunks: list[dict], model_name: str, output_dir: pathlib.Path) -> None:

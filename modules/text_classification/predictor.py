@@ -1,11 +1,10 @@
 import json
-import pathlib
 
 import torch
 
+from modules.config import TEXT_CLASSIFICATION_MODEL_CONFIG_FILE as CONFIG_PATH
 from modules.text_classification.model_loader import load_model
 
-CONFIG_PATH = pathlib.Path(__file__).parent / "config.json"
 with open(CONFIG_PATH, "r") as f:
     config = json.load(f)
 
