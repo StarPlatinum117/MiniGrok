@@ -3,6 +3,7 @@ import logging
 import time
 
 import torch
+from datasets import ClassLabel
 from datasets import Dataset as HFDataset
 from torch.utils.data import DataLoader
 from torch.utils.data import Dataset as TorchDataset
@@ -107,16 +108,18 @@ def get_dataloaders(
         val_loader: DataLoader for the validation set.
         test_loader: DataLoader for the test set.
     """
+    # Load the model configuration.
+    with open(CONFIG_FILE, "r", encoding="utf-8") as f:
+        model_config = json.load(f)
+
     # Load the Queries dataset.
     with open(DATA_FILE, "r", encoding="utf-8") as f:
         raw_data = json.load(f)
     dataset = HFDataset.from_list(raw_data)
 
-    # Map labels to integers.
-    with open(CONFIG_FILE, "r", encoding="utf-8") as f:
-        model_config = json.load(f)
-    label_mapping = model_config["label_mapping"]
-    dataset = dataset.map(lambda x: {"label": label_mapping[x["label"]]})
+    # Cast "label" column to ClassLabel type.
+    label_names = list(model_config["label_mapping"].keys())
+    dataset = dataset.cast_column("label", ClassLabel(names=label_names))
 
     # Split the dataset into train, val and test sets.
     split_dataset = dataset.train_test_split(test_size=0.2, stratify_by_column="label", seed=42)

@@ -6,14 +6,14 @@
     "max_length": 128
   },
   "label_mapping": {
-    "0": "rag_retrieval",
-    "1": "llm_generation",
-    "2": "image_generation"
+    "rag_retrieval": 0,
+    "llm_generation": 1,
+    "image_generation": 2
   },
-  "train_settings": {
+  "training_settings": {
     "seed": 42,
     "batch_size": 4,
-    "num_epochs": 10,
+    "num_epochs": 7,
     "light_training": false,
     "chosen_optimizer": "adamw",
     "optimizer_config": {

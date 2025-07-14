@@ -43,7 +43,7 @@ device = config["device"]
 label_map = config["label_mapping"]
 n_labels = len(label_map)
 
-model_name = config["model_config"]["model_name"]
+model_name = config["model_config"]["name"]
 tokenizer_max_len = int(config["model_config"]["max_length"])
 
 # ========================= Optimizer Config. ======================================
