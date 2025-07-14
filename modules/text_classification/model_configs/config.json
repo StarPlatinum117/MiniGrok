@@ -1,0 +1,38 @@
+{
+  "model_config": {
+    "name": "distilbert-base-uncased",
+    "file_path": "./modules/text_classification/model_weights/best_model.pt",
+    "num_labels": 4,
+    "max_length": 128
+  },
+  "label_mapping": {
+    "0": "rag_retrieval",
+    "1": "llm_generation",
+    "2": "image_generation"
+  },
+  "train_settings": {
+    "seed": 42,
+    "batch_size": 4,
+    "num_epochs": 10,
+    "light_training": false,
+    "chosen_optimizer": "adamw",
+    "optimizer_config": {
+      "adamw": {
+          "params": {
+              "lr": 2e-5,
+              "weight_decay": 0.01,
+              "eps": 1e-8
+          }
+      },
+      "sgd": {
+          "params": {
+              "lr": 0.01,
+              "momentum": 0.9,
+              "weight_decay": 0.01
+          }
+      }
+  }
+  },
+    "device": "cpu"
+}
+
