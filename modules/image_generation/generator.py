@@ -11,6 +11,11 @@ from modules.image_generation.model_loader import load_model
 
 from hashlib import sha1
 
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s - %(levelname)s - %(message)s",
+)
+
 
 def generate_image(
         *,
@@ -40,7 +45,6 @@ def generate_image(
         image = Image.new("RGB", size, (random.randint(0, 255), random.randint(0, 255), random.randint(0, 255)))
         draw = ImageDraw.Draw(image)
         draw.text((10, 10), "Placeholder image", fill=(255, 255, 255))
-        return image
 
     else:
         logging.info(f"Generating image with prompt: {prompt}")
