@@ -1,15 +1,15 @@
 import logging
 import pathlib
 import random
+from hashlib import sha1
 
+from diffusers import StableDiffusionPipeline
 from PIL import Image
 from PIL import ImageDraw
 
 from modules.config import IMAGE_GENERATION_IMAGES_DIR as IMAGES_DIR
 from modules.config import IMAGE_GENERATION_MODEL_NAME as MODEL_NAME
 from modules.image_generation.model_loader import load_model
-
-from hashlib import sha1
 
 logging.basicConfig(
     level=logging.INFO,
@@ -19,7 +19,7 @@ logging.basicConfig(
 
 def generate_image(
         *,
-        model_name: str,
+        model: StableDiffusionPipeline | str,
         prompt: str,
         output_dir: pathlib.Path,
         device: str = "cpu"
@@ -28,7 +28,7 @@ def generate_image(
     Generate an image from a text prompt using either the Stable Diffusion model or the dummy model.
 
     Args:
-        model_name: The name of the Stable Diffusion model to use.
+        model: The loaded StableDiffussionPipeline model or name of the model.
         prompt: The text prompt to generate the image from.
         output_dir: The dir to save the generated image.
         device: The device to run the model on (default is "cpu").
@@ -36,7 +36,7 @@ def generate_image(
     Returns:
         The generated image.
     """
-    if model_name == "dummy":
+    if model == "dummy":
         logging.info(
             "Dummy model activated. The generated image will be unrelated to the the following prompt:\n"
             f"{prompt}"
@@ -49,18 +49,16 @@ def generate_image(
     else:
         logging.info(f"Generating image with prompt: {prompt}")
 
-        # Load the model.
-        pipe = load_model(model_name=model_name, device=device)
-        logging.info(f"Model {model_name} loaded successfully on {device}.")
-
         # Generate the image.
-        image = pipe(prompt).images[0]
+        image = model(prompt).images[0]
 
     logging.info("Image generated successfully.")
 
     # Save the image to the output path.
     hashed = sha1(prompt.encode()).hexdigest()[:8]
-    file_path = output_dir / f"img_{model_name}_{hashed}.png"
+    model_tag = "dummy" if model == "dummy" else "real"
+    file_path = output_dir / f"img_{model_tag}_{hashed}.png"
+    file_path.parent.mkdir(exist_ok=True, parents=True)
     image.save(file_path)
     logging.info(f"Image saved to {file_path}")
 
@@ -70,7 +68,7 @@ def generate_image(
 if __name__ == "__main__":
     # Example usage. Currently, only "dummy" model works since diffusion models cannot be downloaded.
     generated_image = generate_image(
-        model_name=MODEL_NAME,
+        model=MODEL_NAME,
         prompt="A beautiful landscape with mountains and a river",
         output_dir=IMAGES_DIR,
         device="cpu"

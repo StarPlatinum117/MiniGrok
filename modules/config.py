@@ -7,6 +7,7 @@ LLM_GENERATION_MODEL_NAME = "google/flan-t5-small"
 
 # Image Generation module.
 IMAGE_GENERATION_MODEL_NAME = "dummy"
+
 IMAGE_GENERATION_DIR = MODULES_DIR / "image_generation"
 IMAGE_GENERATION_IMAGES_DIR = IMAGE_GENERATION_DIR / "images"
 
@@ -22,6 +23,8 @@ RAG_INDEX_FILE = RAG_INDEX_DIR / "index.faiss"
 RAG_EMBEDDING_MODEL_NAME = "sentence-transformers/all-MiniLM-L6-v2"
 
 # Text Classification module.
+TEXT_CLASSIFICAION_MODEL_NAME = "distilbert-base-uncased"
+
 TEXT_CLASSIFICATION_DIR = MODULES_DIR / "text_classification"
 TEXT_CLASSIFICATION_DATA_DIR = TEXT_CLASSIFICATION_DIR / "data"
 TEXT_CLASSIFICATION_MODEL_CONFIGS_DIR = TEXT_CLASSIFICATION_DIR / "model_configs"
