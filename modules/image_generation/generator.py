@@ -1,14 +1,15 @@
 import logging
 import pathlib
-from diffusers import StableDiffusionPipeline
+import random
 
-from modules.config import IMAGE_GENERATION_MODEL_NAME as MODEL_NAME
-from modules.config import IMAGE_GENERATION_IMAGES_DIR as IMAGES_DIR
-from modules.image_generation.model_loader import load_model
-import torch
 from PIL import Image
 from PIL import ImageDraw
-import random
+
+from modules.config import IMAGE_GENERATION_IMAGES_DIR as IMAGES_DIR
+from modules.config import IMAGE_GENERATION_MODEL_NAME as MODEL_NAME
+from modules.image_generation.model_loader import load_model
+
+from hashlib import sha1
 
 
 def generate_image(
@@ -54,7 +55,8 @@ def generate_image(
     logging.info("Image generated successfully.")
 
     # Save the image to the output path.
-    file_path = output_dir / f"output_image_{model_name}.png"
+    hashed = sha1(prompt.encode()).hexdigest()[:8]
+    file_path = output_dir / f"img_{model_name}_{hashed}.png"
     image.save(file_path)
     logging.info(f"Image saved to {file_path}")
 
