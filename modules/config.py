@@ -2,8 +2,13 @@ import pathlib
 
 MODULES_DIR = pathlib.Path(__file__).parent
 
-# LLM Generation module configuration.
+# LLM Generation module.
 LLM_GENERATION_MODEL_NAME = "google/flan-t5-small"
+
+# Image Generation module.
+IMAGE_GENERATION_MODEL_NAME = "dummy"
+IMAGE_GENERATION_DIR = MODULES_DIR / "image_generation"
+IMAGE_GENERATION_IMAGES_DIR = IMAGE_GENERATION_DIR / "images"
 
 # RAG Retrieval module.
 RAG_DATA_DIR = MODULES_DIR / "rag_retrieval" / "data"
