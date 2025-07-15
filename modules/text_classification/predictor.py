@@ -1,19 +1,28 @@
 import json
+import logging
 
 import torch
 
-from modules.config import TEXT_CLASSIFICATION_MODEL_CONFIG_FILE as CONFIG_PATH
+from modules.config import TEXT_CLASSIFICATION_MODEL_WEIGHTS_FILE as MODEL_WEIGHTS_FILE
+from modules.config import TEXT_CLASSIFICATION_MODEL_CONFIG_FILE as CONFIG_FILE
 from modules.text_classification.model_loader import load_model
 
-with open(CONFIG_PATH, "r") as f:
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(filename)s:%(lineno)d - %(funcName)s() - %(levelname)s - %(message)s'
+)
+
+with open(CONFIG_FILE, "r") as f:
     config = json.load(f)
 
 model, tokenizer = load_model(
     model_name=config["model_config"]["name"],
-    model_path=config["model_config"]["file_path"],
+    model_path=MODEL_WEIGHTS_FILE,
     num_labels=config["model_config"]["num_labels"],
     device=config["device"]
 )
+
+idx_to_label = {idx: label for label, idx in config["label_mapping"].items()}
 
 
 def predict(text: str) -> str:
@@ -44,5 +53,17 @@ def predict(text: str) -> str:
         predicted_class = torch.argmax(logits, dim=-1).item()
 
     # Map the predicted class index to the label.
-    label = config["labels"][str(predicted_class)]  # config requires a str label
+    label = idx_to_label[predicted_class]
     return label
+
+
+if __name__ == "__main__":
+    # Example usage
+    queries = [
+        "Generate a picture of a koala eating a pizza, drinking beer and arm-wrestling Schwarzenegger",
+        "What is the Standard Model of particle physics?",
+        "Write a short essay about the impact of stars on the universe and human culture.",
+    ]
+    for q in queries:
+        predicted_label = predict(q)
+        logging.info(f"Query: {q}\nPredicted label: {predicted_label}\n")

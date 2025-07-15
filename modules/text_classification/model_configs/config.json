@@ -1,8 +1,8 @@
 {
   "model_config": {
     "name": "distilbert-base-uncased",
-    "file_path": "./modules/text_classification/model_weights/best_model.pt",
-    "num_labels": 4,
+    "file_path": "best_model.pt",
+    "num_labels": 3,
     "max_length": 128
   },
   "label_mapping": {

@@ -53,6 +53,7 @@ chosen_optimizer_config = optimizer_config[chosen_optimizer]
 chosen_optimizer_config["class"] = {"adamw": AdamW, "sgd": SGD}[chosen_optimizer]
 
 # ============================ Main. ===============================================
+assert n_labels == config["model_config"]["num_labels"], "Mismatch in number of labels. Check config.json file."
 set_seed(seed)
 # Load tokenizer and dataset.
 logging.info("Starting the Queries dataset loading process...")
