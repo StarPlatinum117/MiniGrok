@@ -1,0 +1,35 @@
+The CIPP evaluation model is a program evaluation model which was developed by Daniel Stufflebeam and colleagues in the 1960s. CIPP is an acronym for context, input, process and product. CIPP is a decision-focused approach to evaluation and emphasizes the systematic provision of information for program management and operation.
+
+
+== CIPP model ==
+The CIPP framework was developed as a means of linking evaluation with  program decision-making. It aims to provide an analytic and rational basis for  program decision-making, based on a cycle of planning, structuring, implementing and reviewing and revising decisions, each examined through a different aspect of evaluation –context, input, process and product evaluation.
+The CIPP model is an attempt to make evaluation directly relevant to the needs of decision-makers during the phases and activities of a  program. Stufflebeam’s context, input, process, and product (CIPP) evaluation model is recommended as a framework to systematically guide the conception, design, implementation, and assessment of service-learning projects, and provide feedback and judgment of the project’s effectiveness for continuous improvement.
+
+
+== Four aspects of CIPP evaluation ==
+These aspects are context, inputs, process, and product. These four aspects of CIPP evaluation assist a decision-maker to answer four basic questions:
+
+What should we do?
+This involves collecting and analysing needs assessment data to determine goals, priorities and objectives. For example, a context evaluation of a literacy program might involve an analysis of the existing objectives of the literacy  program, literacy achievement test scores, staff concerns (general and particular), literacy policies and plans and community concerns, perceptions or attitudes and needs.
+
+How should we do it?
+This involves the steps and resources needed to meet the new goals and objectives and might include identifying successful external programs and materials as well as gathering information.
+
+Are we doing it as planned?
+This provides decision-makers with information about how well the  program is being implemented. By continuously monitoring the program, decision-makers learn such things as how well it is following the plans and guidelines, conflicts arising, staff support and morale, strengths and weaknesses of materials, delivery and budgeting problems.
+
+Did the program work?
+By measuring the actual outcomes and comparing them to the anticipated outcomes, decision-makers are better able to decide if the program should be continued, modified, or dropped altogether. This is the essence of product evaluation.
+
+
+== Using CIPP in the different stages of the evaluation ==
+The CIPP model is unique as an evaluation guide as it allows evaluators to evaluate the program at different stages, namely: before the program commences by helping evaluators to assess the need and at the end of the program to assess whether or not the program had an effect.
+CIPP model allows you to ask formative questions at the beginning of the program, then later gives you a guide of how to evaluate the programs impact by allowing you to ask summative questions on all aspects of the program.
+
+Context: What needs to be done? Vs. Were important needs addressed?
+Input: How should it be done? Vs. Was a defensible design employed?
+Process: Is it being done? Vs. Was the design well executed?
+Product: Is it succeeding? Vs. Did the effort succeed?
+
+
+== References ==

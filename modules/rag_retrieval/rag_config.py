@@ -1,0 +1,92 @@
+from modules.config import RAG_EMBEDDING_MODEL_NAME
+
+DOCUMENT_TOPICS = [
+    # Core AI / ML
+    "Artificial intelligence",
+    "Machine learning",
+    "Deep learning",
+    "Supervised learning",
+    "Unsupervised learning",
+    "Reinforcement learning",
+    "Natural language processing",
+    "Computer vision",
+    "Neural network",
+    "Convolutional neural network",
+    "Recurrent neural network",
+    "Transformer (machine learning model)",
+    "Attention (machine learning)",
+    "Autoencoder",
+    "Generative adversarial network",
+    "Transfer learning",
+    "Self-supervised learning",
+    "Large language model",
+    "Retrieval-augmented generation",
+    "Embeddings (machine learning)",
+    "Multimodal AI",
+    "OpenAI",
+    "Meta AI",
+    "Hugging Face",
+    "PyTorch",
+    "TensorFlow",
+    "JAX (software)",
+    "LangChain",
+    "ML Ops",
+
+    # Physics / Math
+    "Classical mechanics",
+    "Quantum mechanics",
+    "Quantum field theory",
+    "Special relativity",
+    "General relativity",
+    "Electromagnetism",
+    "Thermodynamics",
+    "Chaos theory",
+    "Computational physics",
+    "Linear algebra",
+    "Differential equations",
+    "Probability theory",
+    "Statistics",
+    "Information theory",
+    "Fourier transform",
+    "Matrix factorization",
+    "Graph theory",
+
+    # Biology / Neuroscience
+    "Neuroscience",
+    "Neuron",
+    "Biological neural network",
+    "Hebbian learning",
+    "Neuroplasticity",
+    "Evolutionary biology",
+    "Genetic algorithm",
+    "Bioinformatics",
+    "Systems biology",
+
+    # History / Philosophy of Science
+    "History of artificial intelligence",
+    "Alan Turing",
+    "Marvin Minsky",
+    "John von Neumann",
+    "Cybernetics",
+    "Philosophy of mind",
+    "Logic (philosophy)",
+    "Scientific revolution",
+    "Epistemology",
+    "Technological singularity",
+    "Intelligence explosion",
+
+    # Infrastructure / Deployment
+    "FAISS (Facebook AI Similarity Search)",
+    "Elasticsearch",
+    "REST (architecture)",
+    "API",
+    "Big data",
+    "Cloud computing",
+    "Model evaluation",
+    "Bias in artificial intelligence",
+    "Fairness in machine learning",
+]
+
+CHUNK_SIZE = 500
+CHUNK_OVERLAP = 50
+EMBEDDING_MODEL_NAME = RAG_EMBEDDING_MODEL_NAME

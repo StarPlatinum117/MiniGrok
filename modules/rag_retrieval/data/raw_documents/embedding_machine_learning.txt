@@ -1,0 +1,13 @@
+Embedding in machine learning refers to a representation learning technique that maps complex, high-dimensional data into a lower-dimensional vector space of numerical vectors. It also denotes the resulting representation, where meaningful patterns or relationships are preserved. As a technique, it learns these vectors from data like words, images, or user interactions, differing from manually designed methods such as one-hot encoding. This process reduces complexity and captures key features without needing prior knowledge of the problem area (domain). 
+For example, in natural language processing (NLP), it might represent "cat" as [0.2, −0.4, 0.7], "dog" as [0.3, −0.5, 0.6], and "car" as [0.8, 0.1, −0.2], placing "cat" and "dog" close together in the space—reflecting their similarity—while "car" is farther away. The resulting embeddings vary by type, including word embeddings for text (e.g., Word2Vec), image embeddings for visual data, and knowledge graph embeddings for knowledge graphs, each tailored to tasks like NLP, computer vision, or recommendation systems. This dual role enhances model efficiency and accuracy by automating feature extraction and revealing latent similarities across diverse applications.
+
+
+== See also ==
+Feature extraction
+Dimensionality reduction
+Word embedding
+Neural network
+Reinforcement learning
+
+
+== References ==

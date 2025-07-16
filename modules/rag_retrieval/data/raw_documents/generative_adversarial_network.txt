@@ -1592,14 +1592,6 @@ In particular, if the prior probability for an image
     {\displaystyle D(x)}
   
  is just the posterior probability that 
-  
-    
-      
-        x
-      
-    
-    {\displaystyle x}
-  
  came from the reference distribution:
   
     
@@ -1659,19 +1651,6 @@ In practice, the generator has access only to measures of form
     {\displaystyle \mu _{Z}\circ G_{\theta }^{-1}}
   
 , where 
-  
-    
-      
-        
-          G
-          
-            θ
-          
-        
-      
-    
-    {\displaystyle G_{\theta }}
-  
  is a function computed by a neural network with parameters 
   
     
@@ -1696,19 +1675,6 @@ In practice, the generator has access only to measures of form
     {\displaystyle \mu _{Z}}
   
  is an easily sampled distribution, such as the uniform or normal distribution. Similarly, the discriminator has access only to functions of form 
-  
-    
-      
-        
-          D
-          
-            ζ
-          
-        
-      
-    
-    {\displaystyle D_{\zeta }}
-  
 , a function computed by a neural network with parameters 
   
     
@@ -1950,45 +1916,6 @@ Another evaluation method is the Learned Perceptual Image Patch Similarity (LPIP
     {\displaystyle x'}
   
  is a perturbed version of it, and 
-  
-    
-      
-        
-          p
-          e
-          r
-          c
-          e
-          p
-          t
-          u
-          a
-          l
-           
-          d
-          i
-          f
-          f
-          e
-          r
-          e
-          n
-          c
-          e
-        
-        ⁡
-        (
-        x
-        ,
-        
-          x
-          ′
-        
-        )
-      
-    
-    {\displaystyle \operatorname {perceptual~difference} (x,x')}
-  
  is how much they differ, as reported by human subjects. The model is finetuned so that it can approximate 
   
     
@@ -2055,48 +1982,6 @@ Another evaluation method is the Learned Perceptual Image Patch Similarity (LPIP
     {\displaystyle \|f_{\theta }(x)-f_{\theta }(x')\|\approx \operatorname {perceptual~difference} (x,x')}
   
 . This finetuned model is then used to define 
-  
-    
-      
-        LPIPS
-        ⁡
-        (
-        x
-        ,
-        
-          x
-          ′
-        
-        )
-        :=
-        ‖
-        
-          f
-          
-            θ
-          
-        
-        (
-        x
-        )
-        −
-        
-          f
-          
-            θ
-          
-        
-        (
-        
-          x
-          ′
-        
-        )
-        ‖
-      
-    
-    {\displaystyle \operatorname {LPIPS} (x,x'):=\|f_{\theta }(x)-f_{\theta }(x')\|}
-  
 .
 Other evaluation methods are reviewed in.
 
@@ -2122,158 +2007,14 @@ The generator in a GAN game generates
     {\displaystyle \mu _{G}}
   
 , a probability distribution on the probability space 
-  
-    
-      
-        Ω
-      
-    
-    {\displaystyle \Omega }
-  
 . This leads to the idea of a conditional GAN, where instead of generating one probability distribution on 
-  
-    
-      
-        Ω
-      
-    
-    {\displaystyle \Omega }
-  
 , the generator generates a different probability distribution 
-  
-    
-      
-        
-          μ
-          
-            G
-          
-        
-        (
-        c
-        )
-      
-    
-    {\displaystyle \mu _{G}(c)}
-  
  on 
-  
-    
-      
-        Ω
-      
-    
-    {\displaystyle \Omega }
-  
 , for each given class label 
-  
-    
-      
-        c
-      
-    
-    {\displaystyle c}
-  
 .
 For example, for generating images that look like ImageNet, the generator should be able to generate a picture of cat when given the class label "cat".
 In the original paper, the authors noted that GAN can be trivially extended to conditional GAN by providing the labels to both the generator and the discriminator.
 Concretely, the conditional GAN game is just the GAN game with class labels provided:
-  
-    
-      
-        L
-        (
-        
-          μ
-          
-            G
-          
-        
-        ,
-        D
-        )
-        :=
-        
-          E
-          
-            c
-            ∼
-            
-              μ
-              
-                C
-              
-            
-            ,
-            x
-            ∼
-            
-              μ
-              
-                ref
-              
-            
-            (
-            c
-            )
-          
-        
-        ⁡
-        [
-        ln
-        ⁡
-        D
-        (
-        x
-        ,
-        c
-        )
-        ]
-        +
-        
-          E
-          
-            c
-            ∼
-            
-              μ
-              
-                C
-              
-            
-            ,
-            x
-            ∼
-            
-              μ
-              
-                G
-              
-            
-            (
-            c
-            )
-          
-        
-        ⁡
-        [
-        ln
-        ⁡
-        (
-        1
-        −
-        D
-        (
-        x
-        ,
-        c
-        )
-        )
-        ]
-      
-    
-    {\displaystyle L(\mu _{G},D):=\operatorname {E} _{c\sim \mu _{C},x\sim \mu _{\text{ref}}(c)}[\ln D(x,c)]+\operatorname {E} _{c\sim \mu _{C},x\sim \mu _{G}(c)}[\ln(1-D(x,c))]}
-  
 where 
   
     
@@ -2332,14 +2073,6 @@ where
     {\displaystyle \mu _{G}(c)}
   
  the probability distribution of images generated by the generator when given class label 
-  
-    
-      
-        c
-      
-    
-    {\displaystyle c}
-  
 .
 In 2017, a conditional GAN learned to generate 1000 image classes of ImageNet.
 
@@ -2524,304 +2257,14 @@ We recast the original GAN objective into a form more convenient for comparison:
 
 Original GAN, non-saturating loss:
 This objective for generator was recommended in the original paper for faster convergence.
-  
-    
-      
-        
-          L
-          
-            G
-          
-        
-        =
-        
-          E
-          
-            x
-            ∼
-            
-              μ
-              
-                G
-              
-            
-          
-        
-        ⁡
-        [
-        ln
-        ⁡
-        D
-        (
-        x
-        )
-        ]
-      
-    
-    {\displaystyle L_{G}=\operatorname {E} _{x\sim \mu _{G}}[\ln D(x)]}
-  
 The effect of using this objective is analyzed in Section 2.2.2 of Arjovsky et al.
 Original GAN, maximum likelihood:
 
-  
-    
-      
-        
-          L
-          
-            G
-          
-        
-        =
-        
-          E
-          
-            x
-            ∼
-            
-              μ
-              
-                G
-              
-            
-          
-        
-        ⁡
-        [
-        (
-        
-          exp
-        
-        ∘
-        
-          σ
-          
-            −
-            1
-          
-        
-        ∘
-        D
-        )
-        (
-        x
-        )
-        ]
-      
-    
-    {\displaystyle L_{G}=\operatorname {E} _{x\sim \mu _{G}}[({\exp }\circ \sigma ^{-1}\circ D)(x)]}
-  
 where 
-  
-    
-      
-        σ
-      
-    
-    {\displaystyle \sigma }
-  
  is the logistic function. When the discriminator is optimal, the generator gradient is the same as in maximum likelihood estimation, even though GAN cannot perform maximum likelihood estimation itself.
 Hinge loss GAN:
-  
-    
-      
-        
-          L
-          
-            D
-          
-        
-        =
-        −
-        
-          E
-          
-            x
-            ∼
-            
-              p
-              
-                ref
-              
-            
-          
-        
-        ⁡
-        
-          [
-          
-            min
-            
-              (
-              
-                0
-                ,
-                −
-                1
-                +
-                D
-                (
-                x
-                )
-              
-              )
-            
-          
-          ]
-        
-        −
-        
-          E
-          
-            x
-            ∼
-            
-              μ
-              
-                G
-              
-            
-          
-        
-        ⁡
-        
-          [
-          
-            min
-            
-              (
-              
-                0
-                ,
-                −
-                1
-                −
-                D
-                
-                  (
-                  x
-                  )
-                
-              
-              )
-            
-          
-          ]
-        
-      
-    
-    {\displaystyle L_{D}=-\operatorname {E} _{x\sim p_{\text{ref}}}\left[\min \left(0,-1+D(x)\right)\right]-\operatorname {E} _{x\sim \mu _{G}}\left[\min \left(0,-1-D\left(x\right)\right)\right]}
-  
 
-  
-    
-      
-        
-          L
-          
-            G
-          
-        
-        =
-        −
-        
-          E
-          
-            x
-            ∼
-            
-              μ
-              
-                G
-              
-            
-          
-        
-        ⁡
-        [
-        D
-        (
-        x
-        )
-        ]
-      
-    
-    {\displaystyle L_{G}=-\operatorname {E} _{x\sim \mu _{G}}[D(x)]}
-  
 Least squares GAN:
-  
-    
-      
-        
-          L
-          
-            D
-          
-        
-        =
-        
-          E
-          
-            x
-            ∼
-            
-              μ
-              
-                ref
-              
-            
-          
-        
-        ⁡
-        [
-        (
-        D
-        (
-        x
-        )
-        −
-        b
-        
-          )
-          
-            2
-          
-        
-        ]
-        +
-        
-          E
-          
-            x
-            ∼
-            
-              μ
-              
-                G
-              
-            
-          
-        
-        ⁡
-        [
-        (
-        D
-        (
-        x
-        )
-        −
-        a
-        
-          )
-          
-            2
-          
-        
-        ]
-      
-    
-    {\displaystyle L_{D}=\operatorname {E} _{x\sim \mu _{\text{ref}}}[(D(x)-b)^{2}]+\operatorname {E} _{x\sim \mu _{G}}[(D(x)-a)^{2}]}
-  
 
   
     
@@ -2907,20 +2350,6 @@ where
 The Wasserstein GAN modifies the GAN game at two points:
 
 The discriminator's strategy set is the set of measurable functions of type 
-  
-    
-      
-        D
-        :
-        Ω
-        →
-        
-          R
-        
-      
-    
-    {\displaystyle D:\Omega \to \mathbb {R} }
-  
  with bounded Lipschitz norm: 
   
     
@@ -3050,32 +2479,7 @@ In conditional GAN, the generator receives both a noise vector
     {\displaystyle c}
   
 , and produces an image 
-  
-    
-      
-        G
-        (
-        z
-        ,
-        c
-        )
-      
-    
-    {\displaystyle G(z,c)}
-  
 . The discriminator receives image-label pairs 
-  
-    
-      
-        (
-        x
-        ,
-        c
-        )
-      
-    
-    {\displaystyle (x,c)}
-  
 , and computes 
   
     
@@ -3093,18 +2497,6 @@ In conditional GAN, the generator receives both a noise vector
 .
 When the training dataset is unlabeled, conditional GAN does not work directly.
 The idea of InfoGAN is to decree that every latent vector in the latent space can be decomposed as 
-  
-    
-      
-        (
-        z
-        ,
-        c
-        )
-      
-    
-    {\displaystyle (z,c)}
-  
 : an incompressible noise part 
   
     
@@ -3124,24 +2516,6 @@ The idea of InfoGAN is to decree that every latent vector in the latent space ca
     {\displaystyle c}
   
 , and encourage the generator to comply with the decree, by encouraging it to maximize 
-  
-    
-      
-        I
-        (
-        c
-        ,
-        G
-        (
-        z
-        ,
-        c
-        )
-        )
-      
-    
-    {\displaystyle I(c,G(z,c))}
-  
 , the mutual information between 
   
     
@@ -3152,19 +2526,6 @@ The idea of InfoGAN is to decree that every latent vector in the latent space ca
     {\displaystyle c}
   
  and 
-  
-    
-      
-        G
-        (
-        z
-        ,
-        c
-        )
-      
-    
-    {\displaystyle G(z,c)}
-  
 , while making no demands on the mutual information 
   
     
@@ -3209,99 +2570,6 @@ Unfortunately,
     {\displaystyle I(c,G(z,c))}
   
  is intractable in general, The key idea of InfoGAN is Variational Mutual Information Maximization: indirectly maximize it by maximizing a lower bound
-  
-    
-      
-        
-          
-            
-              I
-              ^
-            
-          
-        
-        (
-        G
-        ,
-        Q
-        )
-        =
-        
-          
-            E
-          
-          
-            z
-            ∼
-            
-              μ
-              
-                Z
-              
-            
-            ,
-            c
-            ∼
-            
-              μ
-              
-                C
-              
-            
-          
-        
-        [
-        ln
-        ⁡
-        Q
-        (
-        c
-        ∣
-        G
-        (
-        z
-        ,
-        c
-        )
-        )
-        ]
-        ;
-        
-        I
-        (
-        c
-        ,
-        G
-        (
-        z
-        ,
-        c
-        )
-        )
-        ≥
-        
-          sup
-          
-            Q
-          
-        
-        
-          
-            
-              I
-              ^
-            
-          
-        
-        (
-        G
-        ,
-        Q
-        )
-      
-    
-    {\displaystyle {\hat {I}}(G,Q)=\mathbb {E} _{z\sim \mu _{Z},c\sim \mu _{C}}[\ln Q(c\mid G(z,c))];\quad I(c,G(z,c))\geq \sup _{Q}{\hat {I}}(G,Q)}
-  
 where 
   
     
@@ -3345,28 +2613,6 @@ where
 
 The InfoGAN game is defined as follows:Three probability spaces define an InfoGAN game:
 
-  
-    
-      
-        (
-        
-          Ω
-          
-            X
-          
-        
-        ,
-        
-          μ
-          
-            ref
-          
-        
-        )
-      
-    
-    {\displaystyle (\Omega _{X},\mu _{\text{ref}})}
-  
 , the space of reference images.
 
   
@@ -3463,82 +2709,6 @@ The objective function is
     {\displaystyle L(G,Q,D)=L_{GAN}(G,D)-\lambda {\hat {I}}(G,Q)}
   
 where 
-  
-    
-      
-        
-          L
-          
-            G
-            A
-            N
-          
-        
-        (
-        G
-        ,
-        D
-        )
-        =
-        
-          E
-          
-            x
-            ∼
-            
-              μ
-              
-                ref
-              
-            
-            ,
-          
-        
-        ⁡
-        [
-        ln
-        ⁡
-        D
-        (
-        x
-        )
-        ]
-        +
-        
-          E
-          
-            z
-            ∼
-            
-              μ
-              
-                Z
-              
-            
-          
-        
-        ⁡
-        [
-        ln
-        ⁡
-        (
-        1
-        −
-        D
-        (
-        G
-        (
-        z
-        ,
-        c
-        )
-        )
-        )
-        ]
-      
-    
-    {\displaystyle L_{GAN}(G,D)=\operatorname {E} _{x\sim \mu _{\text{ref}},}[\ln D(x)]+\operatorname {E} _{z\sim \mu _{Z}}[\ln(1-D(G(z,c)))]}
-  
  is the original GAN game objective, and 
   
     
@@ -3602,35 +2772,6 @@ where
   
 
 Generator-Q team aims to minimize the objective, and discriminator aims to maximize it:
-  
-    
-      
-        
-          min
-          
-            G
-            ,
-            Q
-          
-        
-        
-          max
-          
-            D
-          
-        
-        L
-        (
-        G
-        ,
-        Q
-        ,
-        D
-        )
-      
-    
-    {\displaystyle \min _{G,Q}\max _{D}L(G,Q,D)}
-  
 
 
 ==== Bidirectional GAN (BiGAN) ====
@@ -3686,154 +2827,20 @@ The standard GAN generator is a function of type
     {\displaystyle \Omega _{X}}
   
 . This can be understood as a "decoding" process, whereby every latent vector 
-  
-    
-      
-        z
-        ∈
-        
-          Ω
-          
-            Z
-          
-        
-      
-    
-    {\displaystyle z\in \Omega _{Z}}
-  
  is a code for an image 
-  
-    
-      
-        x
-        ∈
-        
-          Ω
-          
-            X
-          
-        
-      
-    
-    {\displaystyle x\in \Omega _{X}}
-  
 , and the generator performs the decoding. This naturally leads to the idea of training another network that performs "encoding", creating an autoencoder out of the encoder-generator pair.
 Already in the original paper, the authors noted that "Learned approximate inference can be performed by training an auxiliary network to predict 
-  
-    
-      
-        z
-      
-    
-    {\displaystyle z}
-  
  given 
-  
-    
-      
-        x
-      
-    
-    {\displaystyle x}
-  
 ". The bidirectional GAN architecture performs exactly this.
 
 The BiGAN is defined as follows: Two probability spaces define a BiGAN game:
 
-  
-    
-      
-        (
-        
-          Ω
-          
-            X
-          
-        
-        ,
-        
-          μ
-          
-            X
-          
-        
-        )
-      
-    
-    {\displaystyle (\Omega _{X},\mu _{X})}
-  
 , the space of reference images.
 
-  
-    
-      
-        (
-        
-          Ω
-          
-            Z
-          
-        
-        ,
-        
-          μ
-          
-            Z
-          
-        
-        )
-      
-    
-    {\displaystyle (\Omega _{Z},\mu _{Z})}
-  
 , the latent space.
 There are 3 players in 2 teams: generator, encoder, and discriminator. The generator and encoder are on one team, and the discriminator on the other team.
 The generator's strategies are functions 
-  
-    
-      
-        G
-        :
-        
-          Ω
-          
-            Z
-          
-        
-        →
-        
-          Ω
-          
-            X
-          
-        
-      
-    
-    {\displaystyle G:\Omega _{Z}\to \Omega _{X}}
-  
 , and the encoder's strategies are functions 
-  
-    
-      
-        E
-        :
-        
-          Ω
-          
-            X
-          
-        
-        →
-        
-          Ω
-          
-            Z
-          
-        
-      
-    
-    {\displaystyle E:\Omega _{X}\to \Omega _{Z}}
-  
 . The discriminator's strategies are functions 
   
     
@@ -4152,53 +3159,6 @@ where
     {\displaystyle x\mapsto (x,E(x))}
   
 , and 
-  
-    
-      
-        
-          μ
-          
-            G
-            ,
-            Z
-          
-        
-        (
-        d
-        x
-        ,
-        d
-        z
-        )
-        =
-        
-          δ
-          
-            G
-            (
-            z
-            )
-          
-        
-        (
-        d
-        x
-        )
-        ⋅
-        
-          μ
-          
-            Z
-          
-        
-        (
-        d
-        z
-        )
-      
-    
-    {\displaystyle \mu _{G,Z}(dx,dz)=\delta _{G(z)}(dx)\cdot \mu _{Z}(dz)}
-  
  is the probability distribution on 
   
     

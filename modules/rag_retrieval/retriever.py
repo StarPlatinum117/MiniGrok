@@ -55,7 +55,7 @@ class DocumentRetriever:
             chunk_data = {
                 "text": self.chunks[index]["text"],
                 "source": self.chunks[index]["source"],
-                "score": scores[0][i]
+                "score": float(scores[0][i])
             }
             results.append(chunk_data)
 

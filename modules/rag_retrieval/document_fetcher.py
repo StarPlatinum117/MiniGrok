@@ -11,15 +11,6 @@ logging.basicConfig(
     format="%(asctime)s - %(levelname)s - %(message)s",
 )
 
-topics = [
-    "Python (programming language)",
-    "Transformer (neural network)",
-    "Diffusion model",
-    "FAISS (Facebook AI Similarity Search)",
-    "BERT (language model)",
-    "Generative adversarial network",
-]
-
 
 def fetch_and_save_documents(topics: list[str], output_dir: pathlib.Path) -> None:
     """

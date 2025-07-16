@@ -10,9 +10,6 @@ logging.basicConfig(
     format="%(asctime)s - %(levelname)s - %(message)s",
 )
 
-CHUNK_SIZE = 500
-CHUNK_OVERLAP = 50
-
 
 def split_documents(
         doc_dir: pathlib.Path,

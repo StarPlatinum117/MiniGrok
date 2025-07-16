@@ -1,0 +1,54 @@
+Meta AI is a research division of Meta (formerly Facebook) that develops artificial intelligence and augmented reality technologies.
+
+
+== History ==
+The foundation of Facebook's AI division was announced in 2013, under the name Facebook Artificial Intelligence Research (FAIR). FAIR has workspaces in Menlo Park, California, London, United Kingdom, and Manhattan. FAIR was first directed by New York University's Yann LeCun, a deep learning professor and Turing Award winner. Working with NYU's Center for Data Science, FAIR's initial goal was to research data science, machine learning, and artificial intelligence. Vladimir Vapnik, a pioneer in statistical learning, joined FAIR in 2014.
+FAIR opened a research center in Paris, France in 2015, and subsequently launched smaller satellite research labs in Seattle, Pittsburgh, Tel Aviv, Montreal and London. In 2016, FAIR partnered with Google, Amazon, IBM, and Microsoft in creating the Partnership on Artificial Intelligence to Benefit People and Society.
+In 2018, Jérôme Pesenti, former CTO of IBM's big data group, assumed the role of president of FAIR, while LeCun stepped down to serve as chief AI scientist. FAIR had approximately 200 staff in 2018.
+FAIR's initial work included research in learning-model enabled memory networks, self-supervised learning and generative adversarial networks, document classification and translation, as well as computer vision. FAIR released Torch deep-learning modules as well as PyTorch in 2017, an open-source machine learning framework, which was subsequently used in several deep learning technologies, such as Tesla's autopilot  and Uber's Pyro. That same year, a pair of chatbots were falsely rumored to be discontinued for developing a language that was unintelligible to humans. However, FAIR clarified that the research had been shut down because they had accomplished their initial goal to understand how languages are generated, rather than out of fear.
+FAIR was renamed Meta AI following the rebranding that changed Facebook, Inc. to Meta Platforms Inc.
+
+
+== Meta AI assistant ==
+Meta AI is also the name of an AI assistant developed by the research division, and now integrated as a chatbot into Meta's products, such as WhatsApp, Instagram and Facebook, as well as being available as a stand-alone AI app.
+Meta AI was pre-installed on the second generation of Ray-Ban Meta on September 27, 2023, as a voice assistant. On April 23, 2024, Meta announced an update to Meta AI on the smart glasses to enable multimodal input via Computer vision. On July 23, 2024, Meta announced that Meta AI with Vision would be incorporated into v68 of Horizon OS on the Meta Quest 3 and Quest Pro for detection of physical objects in passthrough mode, replacing the older voice assistant software in Horizon OS. In addition, Meta AI without Vision is supported on the Quest 2.
+On February 27, 2024, Meta announced the launch of a standalone AI app, expanding its AI ecosystem beyond social media integration. The app aims to enhance user experience with advanced AI capabilities and introduce a premium subscription model.
+Meta AI has been progressively rolled out internationally. India is among the nations with the highest usage of Meta AI on WhatsApp and Instagram.
+
+
+== Current research ==
+
+
+=== Natural language processing and conversational AI ===
+Artificial intelligence communication requires a machine to understand natural language and to generate language that is natural. Meta AI seeks to improve these technologies to improve safe communication regardless of what language the user might speak. Thus, a central task involves the generalization of natural language processing (NLP) technology to other languages. As such, Meta AI actively works on unsupervised machine translation. Meta AI seeks to improve Natural-language user interface by developing aspects of chitchat dialogue such as repetition, specificity, response-relatedness and question-asking, incorporating personality into image captioning, and generating creativity-based language.
+
+In November 2022, a large language model designed for generating scientific text, Galactica, was released. Meta withdrew Galactica on 17 November due to offensiveness and inaccuracy. Before the cancellation, researchers were working on Galactica Instruct, which would use Large language model to allow the model to follow instructions to manipulate LaTeX documents on Overleaf.
+
+
+==== Llama ====
+
+In February 2023, Meta AI launched LLaMA (Large Language Model Meta AI), a large language model ranging from 7B to 65B parameters. On April 5, 2025, Meta released two of the three Llama 4 models, Scout and Maverick (the biggest model, Behemoth, was still in training).
+
+
+=== Hardware ===
+Until 2022, Meta AI was powered by CPUs and in-house custom chips, before finally switching to Nvidia GPUs. This necessitated a complete redesign of several data centers, since they needed 24 to 32 times the networking capacity and new liquid cooling systems.
+
+
+==== MTIA v1 ====
+The MTIA v1 is Meta's first-generation AI training and inference accelerator, developed specifically for Meta's recommendation workloads. It was fabricated using TSMC's 7 nm process technology and operates at a frequency of 800 MHz. In terms of processing power, the accelerator provides 102.4 TOPS at INT8 precision and 51.2 TFLOPS at FP16 precision, while maintaining a thermal design power (TDP) of 25 W.
+
+
+=== Mathematical theorem proving ===
+In 2022, Meta created a method for proving mathematical theorems called HyperTree Proof Search (HTPS), which successfully generated proofs of 10 International Mathematical Olympiad problems in Lean.
+
+
+== Meta AI chatbot ==
+Meta AI offers options for users to customize their interaction with its features. Users are able to mute the AI chatbot on platforms like Facebook, Instagram, and WhatsApp, temporarily halting notifications from the chatbot. Some platforms also offer the ability to hide certain AI elements from their interface. To locate the relevant settings, users can consult the platform's help documentation or settings menu.
+Since May 2024, the Meta AI chatbot has summarized news from various outlets without linking directly to original articles, including in Canada, where news links are banned on its platforms. This use of news content without compensation has raised ethical and legal concerns, especially as Meta continues to reduce news visibility on its platforms.
+
+
+== References ==
+
+
+== External links ==
+Official website
