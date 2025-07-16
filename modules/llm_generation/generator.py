@@ -50,7 +50,7 @@ def generate_answer(
         context = "\n".join([chunk["text"] for chunk in retrieved_chunks])
         prompt = (
             "You are a helpful assistant that answers questions based on context.\n\n"
-            f"Context:\n{context}\n\n"
+            f"Context: \n{context}\n\n"
             f"Question: {query}\n"
             "Answer:"
         )
@@ -96,7 +96,7 @@ def generate_answer(
 
 if __name__ == "__main__":
     # Example usage of the LLM generation module with and without RAG retrieval.
-    model, tokenizer = load_model(MODEL_NAME)
+    model, tokenizer = load_model(model_name=MODEL_NAME)
     retriever = DocumentRetriever(
         index_file=INDEX_FILE,
         chunks_file=CHUNKS_FILE,

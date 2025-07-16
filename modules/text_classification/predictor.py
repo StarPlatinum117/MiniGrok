@@ -2,9 +2,11 @@ import json
 import logging
 
 import torch
+from torch.nn import Module
+from transformers import DistilBertTokenizer
 
-from modules.config import TEXT_CLASSIFICATION_MODEL_WEIGHTS_FILE as MODEL_WEIGHTS_FILE
 from modules.config import TEXT_CLASSIFICATION_MODEL_CONFIG_FILE as CONFIG_FILE
+from modules.config import TEXT_CLASSIFICATION_MODEL_WEIGHTS_FILE as MODEL_WEIGHTS_FILE
 from modules.text_classification.model_loader import load_model
 
 logging.basicConfig(
@@ -14,23 +16,22 @@ logging.basicConfig(
 
 with open(CONFIG_FILE, "r") as f:
     config = json.load(f)
-
-model, tokenizer = load_model(
-    model_name=config["model_config"]["name"],
-    model_path=MODEL_WEIGHTS_FILE,
-    num_labels=config["model_config"]["num_labels"],
-    device=config["device"]
-)
-
 idx_to_label = {idx: label for label, idx in config["label_mapping"].items()}
 
 
-def predict(text: str) -> str:
+def predict_query_class(
+        *,
+        text: str,
+        model: Module,
+        tokenizer: DistilBertTokenizer
+) -> str:
     """
     Predict the class of the given text using the loaded model.
 
     Args:
         text: The input text to classify.
+        model: The classifier to use.
+        tokenizer: The tokenizer to encode the text.
 
     Returns:
         str: The predicted class label.
@@ -58,12 +59,23 @@ def predict(text: str) -> str:
 
 
 if __name__ == "__main__":
-    # Example usage
+    # Example usage.
+    classifier, tokenizer = load_model(
+        model_name=config["model_config"]["name"],
+        model_path=MODEL_WEIGHTS_FILE,
+        num_labels=config["model_config"]["num_labels"],
+        device=config["device"]
+    )
+
     queries = [
         "Generate a picture of a koala eating a pizza, drinking beer and arm-wrestling Schwarzenegger",
         "What is the Standard Model of particle physics?",
         "Write a short essay about the impact of stars on the universe and human culture.",
     ]
-    for q in queries:
-        predicted_label = predict(q)
-        logging.info(f"Query: {q}\nPredicted label: {predicted_label}\n")
+    for query in queries:
+        predicted_label = predict_query_class(
+            text=query,
+            model=classifier,
+            tokenizer=tokenizer,
+        )
+        logging.info(f"Query: {query}\nPredicted label: {predicted_label}\n")

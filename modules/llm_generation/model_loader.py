@@ -13,7 +13,7 @@ logging.basicConfig(
 )
 
 
-def load_model(model_name: str) -> tuple[PreTrainedModel, PreTrainedTokenizer]:
+def load_model(*, model_name: str) -> tuple[PreTrainedModel, PreTrainedTokenizer]:
     """
     Loads the Large Language Model and corresponding tokenizer.
 

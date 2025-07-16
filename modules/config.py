@@ -23,7 +23,7 @@ RAG_INDEX_FILE = RAG_INDEX_DIR / "index.faiss"
 RAG_EMBEDDING_MODEL_NAME = "sentence-transformers/all-MiniLM-L6-v2"
 
 # Text Classification module.
-TEXT_CLASSIFICAION_MODEL_NAME = "distilbert-base-uncased"
+TEXT_CLASSIFICATION_MODEL_NAME = "distilbert-base-uncased"
 
 TEXT_CLASSIFICATION_DIR = MODULES_DIR / "text_classification"
 TEXT_CLASSIFICATION_DATA_DIR = TEXT_CLASSIFICATION_DIR / "data"

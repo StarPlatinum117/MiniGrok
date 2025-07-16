@@ -23,7 +23,7 @@ def generate_image(
         prompt: str,
         output_dir: pathlib.Path,
         device: str = "cpu"
-) -> Image.Image:
+) -> dict[str, pathlib.Path]:
     """
     Generate an image from a text prompt using either the Stable Diffusion model or the dummy model.
 
@@ -34,7 +34,7 @@ def generate_image(
         device: The device to run the model on (default is "cpu").
 
     Returns:
-        The generated image.
+        A dictionary with the path to the generated image.
     """
     if model == "dummy":
         logging.info(
@@ -62,7 +62,7 @@ def generate_image(
     image.save(file_path)
     logging.info(f"Image saved to {file_path}")
 
-    return image
+    return {"image_path": file_path}
 
 
 if __name__ == "__main__":
