@@ -1,5 +1,3 @@
-import logging
-
 from fastapi import FastAPI
 from fastapi import HTTPException
 from pydantic import BaseModel
@@ -17,16 +15,6 @@ from modules.llm_generation.model_loader import load_model as load_llm_model
 from modules.rag_retrieval.retriever import DocumentRetriever
 from modules.text_classification.model_loader import load_model as load_class_model
 from modules.text_classification.predictor import predict_query_class
-
-logging.basicConfig(
-    level=logging.INFO,
-    format="%(asctime)s [%(levelname)s] %(name)s: %(message)s",
-    handlers=[
-        logging.StreamHandler()
-    ]
-)
-
-logger = logging.getLogger(__name__)
 
 # Load the text classification model and tokenizer.
 classifier, cls_tokenizer = load_class_model(
@@ -101,7 +89,6 @@ async def generate(input_query: GenerateRequest):
     try:
         # Determine type of query.
         query_type = predict_query_class(text=text, model=classifier, tokenizer=cls_tokenizer)
-        logger.info(f"Predicted type: {query_type}")
         # Select appropriate generator and configuration.
         if query_type in ["rag_retrieval", "llm_generation"]:
             retriever = rag_retriever if query_type == "rag_retrieval" else None
@@ -122,13 +109,11 @@ async def generate(input_query: GenerateRequest):
                 "prompt": text,
                 "output_dir": IMAGES_DIR,
             }
-        logger.info(IMAGES_DIR.exists())
         # Get the model output.
         output = generator(**generator_args)
         base_response = {"query_type": query_type}
         base_response.update(output)
         base_response["image_path"] = str(base_response.get("image_path", ""))
-        logger.info(f"This is your base_response: \n{base_response}")
 
         # Create the response and return it.
         response = GenerateResponse(**base_response)
