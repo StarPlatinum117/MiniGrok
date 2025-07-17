@@ -12,15 +12,19 @@ IMAGE_GENERATION_DIR = MODULES_DIR / "image_generation"
 IMAGE_GENERATION_IMAGES_DIR = IMAGE_GENERATION_DIR / "images"
 
 # RAG Retrieval module.
-RAG_DATA_DIR = MODULES_DIR / "rag_retrieval" / "data"
+RAG_DIR = MODULES_DIR / "rag_retrieval"
+RAG_DATA_DIR = RAG_DIR / "data"
 RAG_CHUNKS_DIR = RAG_DATA_DIR / "chunks"
 RAG_INDEX_DIR = RAG_DATA_DIR / "index"
 RAG_DOCUMENTS_DIR = RAG_DATA_DIR / "raw_documents"
 
+RAG_CONFIG_FILE = RAG_DIR / "rag_config.py"
 RAG_CHUNKS_FILE = RAG_CHUNKS_DIR / "document_chunks.json"
 RAG_INDEX_FILE = RAG_INDEX_DIR / "index.faiss"
 
+
 RAG_EMBEDDING_MODEL_NAME = "sentence-transformers/all-MiniLM-L6-v2"
+
 
 # Text Classification module.
 TEXT_CLASSIFICATION_MODEL_NAME = "distilbert-base-uncased"

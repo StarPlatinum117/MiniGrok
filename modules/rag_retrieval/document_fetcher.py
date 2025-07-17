@@ -5,6 +5,7 @@ import re
 import wikipedia
 
 from modules.config import RAG_DOCUMENTS_DIR as DOCUMENTS_DIR
+from modules.rag_retrieval.rag_config import DOCUMENT_TOPICS
 
 logging.basicConfig(
     level=logging.INFO,
@@ -37,5 +38,5 @@ def fetch_and_save_documents(topics: list[str], output_dir: pathlib.Path) -> Non
 
 if __name__ == "__main__":
     # Fetch and save documents.
-    fetch_and_save_documents(topics, DOCUMENTS_DIR)
+    fetch_and_save_documents(DOCUMENT_TOPICS, DOCUMENTS_DIR)
     logging.info("Document fetching completed.")
