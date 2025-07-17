@@ -80,9 +80,7 @@ async def generate(input_query: GenerateRequest):
     Returns:
         A GeneratedResponse instance with the information related to the model output.
     """
-    logger.info("You are now generating!")
     text = input_query.text.strip()
-    logger.info(f"Received text: {text}")
     if not text:
         raise HTTPException(status_code=400, detail="Input text cannot be empty.")
 
