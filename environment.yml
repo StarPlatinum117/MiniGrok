@@ -1,0 +1,12 @@
+name: minigrok
+channels:
+  - conda-forge
+  - pytorch
+dependencies:
+  - python=3.12
+  - pytorch=2.6.0
+  - faiss-cpu=1.11.0
+  - numpy=1.26.4
+  - matplotlib
+  - pillow
+  - tqdm

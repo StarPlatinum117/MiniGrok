@@ -1,0 +1,11 @@
+__pycache__/
+**/__pycache__/
+**/*.safetensors
+*.ipynb
+*.log
+.env
+*.tar.gz
+*.whl
+*.egg-info/
+.git/
+
