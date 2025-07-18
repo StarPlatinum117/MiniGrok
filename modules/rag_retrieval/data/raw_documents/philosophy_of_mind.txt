@@ -224,6 +224,26 @@ In his book I am You: The Metaphysical Foundations for Global Ethics, Daniel Kol
 Thomas Nagel further discusses the philosophy of self and perspective in the book The View from Nowhere. It contrasts passive and active points of view in how humanity interacts with the world, relying either on a subjective perspective that reflects a point of view or an objective perspective that takes a more detached perspective. Nagel describes the objective perspective as the "view from nowhere", one where the only valuable ideas are ones derived independently.
 
 
+=== Problems in Philosophy of Mind ===
+1) Is the emergent level autonomous?
+2) Can constraint and constitution be causal relations for mental causation?
+3) Does Downward causation violate fundamental micro-level explanation?
+4) Can downward causation between two levels be generalised to other levels?
+5) Is self-organization an answer to reductionism – anti-reductionism debate? Is it a paradigm shift
+from substance and process philosophy?
+6) What is meaning of causation in Downward Causation
+7) Synchronic and diachronic identity of individual self, problem of identity - Ship of Theseus .
+8) Is the reductionism – antireductionism debate same as physicalism – nonreductive physicalism .
+9) How can the higher level of organization which is dependent on the lower level for its existence
+have any causal impact on the lower?
+10) Is causal asymmetry is violated in mental causation?
+11) Is Artificial Intelligence theoretical psychology?
+12) Are special sciences like psychology autonomous in their explanation or reducible to lower levels. 
+13) Is perception controlled form of hallucination? 
+14) Why is there a subjective feeling when the brain is processing information? 
+15) What is epiphenomenal causation?  
+
+
 == See also ==
 
 

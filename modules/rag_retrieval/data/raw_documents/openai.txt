@@ -78,6 +78,7 @@ In May 2025, it was reported that OpenAI had agreed to acquire "Windsurf", an AI
 On May 11, 2025, Financial Times reported that OpenAI and Microsoft are rewriting terms of their multibillion-dollar partnership in a negotiation designed to allow the ChatGPT maker to launch a future IPO, while protecting the software giant's access to cutting-edge AI models.
 On May 21, 2025, OpenAI announced the $6.5 billion acquisition of io, an AI hardware start-up founded by former Apple designer Jony Ive in 2024. The two companies will merge to "work more intimately with the research, engineering, and product teams in San Francisco", and "Jony will assume deep design and creative responsibilities across OpenAI" as the company develops new hardware products powered by AI technology, according to a press release. The deal was reported to be the company's largest acquisition to date.
 In June 2025, OpenAI began renting Google Cloud's Tensor Processing Units (TPUs) to support ChatGPT and related services, marking its first meaningful use of non‑Nvidia AI chips. This strategic move represents a deliberate shift away from exclusive dependency on Microsoft Azure and Nvidia GPUs, enabling diversification of compute infrastructure and potential cost reductions for inference workloads.
+In July 2025, the United States Department of Defense announced that OpenAI had received a $200 million contract for AI in the military, along with Anthropic, Google, and xAI.
 
 
 == Management ==

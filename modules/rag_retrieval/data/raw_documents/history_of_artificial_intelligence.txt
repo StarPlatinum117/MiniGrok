@@ -376,7 +376,7 @@ In 2025, China invested approximately 730 billion yuan (roughly $100 billion USD
 
 
 ==== United States ====
-In January 2025, Stargate LLC was formed as a joint venture of OpenAI, SoftBank, Oracle, and MGX, who announced plans to invest US$500 billion in AI infrastructure in the United States by 2029. Stargate LLC started with a US$100 billion investment in re-industrialization and and national security capabilities. The venture was formally announced by U.S. President Donald Trump on January 21, 2025, with SoftBank CEO Masayoshi Son appointed as chairman.
+In January 2025, Stargate LLC was formed as a joint venture of OpenAI, SoftBank, Oracle, and MGX, who announced plans to invest US$500 billion in AI infrastructure in the United States by 2029. Stargate LLC started with a US$100 billion investment in re-industrialization and national security capabilities. The venture was formally announced by U.S. President Donald Trump on January 21, 2025, with SoftBank CEO Masayoshi Son appointed as chairman.
 The U.S. government allocated approximately $2 billion to integrate AI and robotics in manufacturing and logistics. State governments supplemented this with funding for service robots, such as those deployed in warehouses to fulfill verbal commands for inventory management or in eldercare facilities to respond to residents' requests for assistance. Some funds were directed to defense, including Lethal autonomous weapon and Military robot. In January 2025, Executive Order 14179 established an "AI Action Plan" to accelerate innovation and deployment of these technologies.
 
 

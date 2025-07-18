@@ -2,8 +2,10 @@ import json
 import logging
 import pathlib
 
-from modules.config import RAG_DOCUMENTS_DIR as DOCUMENTS_DIR
 from modules.config import RAG_CHUNKS_DIR as CHUNKS_DIR
+from modules.config import RAG_DOCUMENTS_DIR as DOCUMENTS_DIR
+from modules.rag_retrieval.rag_config import CHUNK_OVERLAP
+from modules.rag_retrieval.rag_config import CHUNK_SIZE
 
 logging.basicConfig(
     level=logging.INFO,

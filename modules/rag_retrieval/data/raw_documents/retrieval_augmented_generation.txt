@@ -84,10 +84,6 @@ Sometimes vector database searches can miss key facts needed to answer a user's 
 Since vector search relies on embedding individual chunks, a lot of granular, token-level information cannot be obtained via pure hybrid of vector search. For higher accuracy, one can create embeddings out of individual tokens instead and compute the Chamfer distance between them. This leads to significantly better results at the cost of speed. Modern solutions such as Morphik make this technique scalable by using a combination of software and hardware acceleration. 
 
 
-=== End to End Solutions ===
-End-to-end RAG solutions aim to simplify the deployment of retrieval-augmented generation by integrating all core components—such as document ingestion, chunking, embedding, indexing, retrieval, and response generation—into a unified system. These solutions reduce the need for manual configuration of individual tools like vector databases, embedding models, or chunking strategies. One example is Morphik, an open-source platform that provides a full-stack RAG pipeline out of the box. Morphik supports techniques like agentic search, late-interaction reranking, and multimodal retrieval to enhance accuracy and context preservation. In a benchmark evaluating complex financial documents from companies like Palantir, NVIDIA, and JPMorgan, Morphik achieved 95.56% accuracy on multi-hop reasoning and numerical queries, demonstrating the potential of integrated systems to outperform modular baselines with less manual overhead.
-
-
 === Evaluation and Benchmarks ===
 RAG systems are commonly evaluated using benchmarks designed to test both retrieval accuracy and generative quality. Popular datasets include BEIR, a suite of information retrieval tasks across diverse domains, and Natural Questions or Google QA for open-domain QA.
 In high-stakes domains like law and healthcare, domain-specific benchmarks are increasingly used. For instance, LegalBench-RAG is an open-source benchmark designed to test retrieval quality over legal documents. It evaluates recall and precision for different RAG pipelines using real-world legal questions and documents.

@@ -316,7 +316,7 @@ If these potential problems are not corrected or regulated, the effects of big d
 == Bibliography ==
 Hilbert, M (2016), "Big Data for Development: A Review of Promises and Challenges", Development Policy Review, 34 (1): 135–74, doi:10.1111/dpr.12142; free access, Archived 21 April 2021 at the Wayback Machine
 Snijders, C.; Matzat, U.; Reips, U.-D. (2012). "'Big Data': Big gaps of knowledge in the field of Internet". International Journal of Internet Science. 7: 1–5. Archived from the original on 23 November 2019. Retrieved 13 April 2013.
-Yanase, J; Triantaphyllou, E (2019). "A Systematic Survey of Computer-Aided Diagnosis in Medicine: Past and Present Developments". Expert Systems with Applications. 138: 112821. doi:10.1016/j.eswa.2019.112821. S2CID 199019309.
+Yanase, J; Triantaphyllou, E (2019). "A Systematic Survey of Computer-Aided Diagnosis in Medicine: Past and Present Developments". Expert Systems with Applications. 138 112821. doi:10.1016/j.eswa.2019.112821. S2CID 199019309.
 
 
 == Further reading ==

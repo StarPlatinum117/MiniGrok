@@ -84,8 +84,8 @@ In the theory of special relativity, the two postulates combine to change the de
 Special relativity has a wide range of consequences that have been experimentally verified. The conceptual effects include:
 
 The § relativity of simultaneity –  events that appear simultaneous to one observer may not be simultaneous to an observer in motion: 49 
-§ Time dilation –  time measured between two events by observers in motions differ
-§ Length contraction –  distances between two events by observers in motions differ
+§ Time dilation –  time measured between two events by observers in motion differ
+§ Length contraction –  distances between two events by observers in motion differ
 The § Lorentz transformation of velocities –  velocities no longer simply add
 Combined with other laws of physics, the two postulates of special relativity predict the equivalence of mass and energy, as expressed in the mass–energy equivalence formula ⁠
   
