@@ -49,7 +49,7 @@ uvicorn api.main:app --reload
 Then POST a query to:
 
 ```
-http://localhost:8000/query
+http://localhost:8000/generate
 ```
 
 Example request:
